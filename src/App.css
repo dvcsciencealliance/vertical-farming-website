@@ -1,11 +1,28 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+@media screen and (min-width: 500px) and (max-width: 800px) {
+  .App-logo {
+    position:relative;
+    width: 82px;
+    height: 82px;
+    background: url(/images/SVG/ScienceAlliance.svg);
+    background-size: 82px 82px;
+  }
 }
+
+@media screen (min-width: 801px) {
+  .App-logo {
+    position:absolute;
+    bottom:0;
+    right:0;
+    width: 164px;
+    height: 164px;
+    background: url(/images/SVG/ScienceAlliance.svg);
+    background-size: 164px 164px;
+  }
+}
+
 
 .App-header {
   background-color: #222;
