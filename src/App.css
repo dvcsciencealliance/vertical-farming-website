@@ -1,41 +1,34 @@
 .App {
   text-align: center;
 }
-@media screen and (min-width: 500px) and (max-width: 800px) {
+@media only screen and (max-width: 768px) {
   .App-logo {
     position:relative;
-    width: 82px;
-    height: 82px;
-    background: url(/images/SVG/ScienceAlliance.svg);
-    background-size: 82px 82px;
+    width: 164px;
+    height: 164px;
+
   }
 }
 
-@media screen (min-width: 801px) {
+
+@media only screen and (min-width: 768px) {
   .App-logo {
     position:absolute;
     bottom:0;
     right:0;
     width: 164px;
     height: 164px;
-    background: url(/images/SVG/ScienceAlliance.svg);
-    background-size: 164px 164px;
+
   }
 }
 
-
 .App-header {
-  background-color: #222;
+  background-color: #fbfaf9;
   height: 150px;
   padding: 20px;
-  color: white;
+  color: blue;
 }
 
 .App-intro {
   font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
