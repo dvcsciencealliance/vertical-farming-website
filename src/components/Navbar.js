@@ -12,10 +12,13 @@ class Navbar extends Component {
       <div className="Navbar">
         <AppBar className="bar">
           <Toolbar>
-            <Text type="title" colorInherit className="flex">DVC Vertical Farming</Text>
+            <a href="/">
+              <Text type="title" colorInherit className="flex">DVC Vertical Farming</Text>
+            </a>
             <div>
-            <Button contrast>Data Insights</Button>
-            <Button contrast>Login</Button>
+              {this.props.links.map(function({ name, href }) {
+                return <Button href={href} contrast>{name}</Button>
+              })}
             </div>
           </Toolbar>
         </AppBar>

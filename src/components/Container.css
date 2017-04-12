@@ -1,6 +1,15 @@
 .paper {
+  margin: 0 auto;
   margin-top: 100px;
-  margin-left: 100px;
   overflow-x: auto;
-  width: 50vw;
+  width: 80vw;
+  text-align: center;
+}
+
+.MuiTableCell-padding-316524091 {
+  text-align: center !important;
+}
+
+h3 {
+  color: #455A64;
 }

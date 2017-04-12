@@ -10,8 +10,17 @@ class Main extends Component {
     return (
       <div className="Main">
         <StackAnimation />
-        <Navbar />
-        <Container />
+        <Navbar links={[
+        {
+          name: 'Data',
+          href: '/data'
+        },
+        {
+          name: 'Login',
+          href: '/login'
+        }
+        ]}/>
+        <Container name="Water"/>
         <AboutButton />
       </div>
     );

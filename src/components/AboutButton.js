@@ -31,10 +31,10 @@ class AboutButton extends Component {
           <DialogContent>
             <DialogContentText>
               <p>
-              Aquaponics and vertical farming current best practices will be thoroughly studied and researched to design, engineer and develop working models that will be used to raise consumable fish, which provide fertilizer through their excretions that will be used to raise edible plants in an integrated system.
+              Aquaponics & vertical farming current best practices will be thoroughly studied and researched to design, engineer and develop working models that will be used to raise consumable fish, which provide fertilizer through their excretions that will be used to raise edible plants in an integrated system.
               </p>
               <p>
-              Available local materials and accessible resources will be used to design and build scientifically supported, practical, relatively low cost proof-of-concept prototypes.
+              Available local materials and accessible resources will be used to design & build scientifically supported, practical, relatively low cost proof-of-concept prototypes.
               </p>
             </DialogContentText>
           </DialogContent>

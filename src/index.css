@@ -4,3 +4,11 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: white;
 }
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: white;
+}

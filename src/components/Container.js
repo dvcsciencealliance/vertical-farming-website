@@ -12,9 +12,9 @@ import DoneIcon from 'material-ui-icons/Done';
 import ClearIcon from 'material-ui-icons/Clear';
 
 let id = 0;
-function createData(pH, temperature, EC, status) {
+function createData(time, date, temperature, pH, EC, status) {
   id += 1;
-  return { id, pH, temperature, EC, status };
+  return { id, time, date, temperature, pH, EC, status };
 }
 
 function getStatusIcon(status) {
@@ -26,23 +26,26 @@ function getStatusIcon(status) {
 }
 
 const data = [
-  createData(6.0, 24, 4.0, true),
-  createData(9.0, 37, 4.3, true),
-  createData(16.0, 24, 6.0, false),
-  createData(3.7, 67, 4.3, false),
-  createData(16.0, 49, 3.9, true)
+  createData("12:00", "April 10, 2017", 24, 6.0, 4.0, true),
+  createData("12:01", "April 10, 2017", 37, 9.0, 4.3, true),
+  createData("12:02", "April 10, 2017", 24, 12.0, 6.0, false),
+  createData("12:03", "April 10, 2017", 67, 8.3, 4.3, false),
+  createData("12:04", "April 10, 2017", 49, 4.2, 3.9, true)
 ];
 
 class Container extends Component {
   render() {
     return (
       <Paper className="paper">
+        <h3>{this.props.name}</h3>
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell numeric>pH</TableCell>
-              <TableCell numeric>Temperature (C)</TableCell>
-              <TableCell numeric>EC</TableCell>
+              <TableCell>Time</TableCell>
+              <TableCell>Date</TableCell>
+              <TableCell>Temperature (C)</TableCell>
+              <TableCell>pH</TableCell>
+              <TableCell>EC</TableCell>
               <TableCell>Status</TableCell>
             </TableRow>
           </TableHead>
@@ -50,9 +53,11 @@ class Container extends Component {
             {data.map((n) => {
               return (
                 <TableRow key={n.id}>
-                  <TableCell numeric>{n.pH}</TableCell>
-                  <TableCell numeric>{n.temperature}</TableCell>
-                  <TableCell numeric>{n.EC}</TableCell>
+                  <TableCell>{n.time}</TableCell>
+                  <TableCell>{n.date}</TableCell>
+                  <TableCell>{n.temperature}</TableCell>
+                  <TableCell>{n.pH}</TableCell>
+                  <TableCell>{n.EC}</TableCell>
                   <TableCell>{getStatusIcon(n.status)}</TableCell>
                 </TableRow>
               );
