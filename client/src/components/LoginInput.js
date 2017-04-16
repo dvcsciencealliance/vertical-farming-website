@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './LoginInput.css';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
+import { browserHistory } from 'react-router';
 
 class LoginInput extends Component {
   state = {
@@ -24,11 +25,20 @@ class LoginInput extends Component {
     })
     .then((response) => response.json())
     .then((responseJSON) => {
-      return responseJSON;
+      console.log(this.props.location);
+      console.log(responseJSON);
+      if (responseJSON.status) {
+        const location = this.props.location;
+        if (location.state && location.state.nextPathname) {
+          browserHistory.push(location.state.nextPathname);
+        } else {
+          browserHistory.push('/');
+        }
+      }
     })
     .catch((error) => {
       console.error(error);
-    })
+    });
   }
 
   render() {

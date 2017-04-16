@@ -16,8 +16,8 @@ class Main extends Component {
           href: '/data'
         },
         {
-          name: 'Login',
-          href: '/login'
+          name: 'Admin',
+          href: '/admin'
         }
         ]}/>
         <Container name="Water"/>
