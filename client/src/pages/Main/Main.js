@@ -48,6 +48,8 @@ class Main extends Component {
         button
         ]}/>
         <Container name="Water"/>
+        <Container name="Plants"/>
+        <Container name="Air"/>
         <AboutButton />
       </div>
     );
