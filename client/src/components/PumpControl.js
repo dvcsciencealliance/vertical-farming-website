@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
-import { LabelSwitch } from 'material-ui/Switch';
+import './PumpControl.css';
+import Toggle from 'material-ui/Toggle';
 
 class PumpControl extends Component {
   static propTypes = {
@@ -33,7 +34,7 @@ class PumpControl extends Component {
     });
   }
 
-  click(event, toggled) {
+  toggle(event, toggled) {
     console.log(toggled);
     console.log('Clicked');
     const token = localStorage.dvcvertfarmingtoken;
@@ -68,9 +69,9 @@ class PumpControl extends Component {
   render() {
     return (
       <div className="PumpControl">
-        <LabelSwitch
-          checked={this.state.toggled}
-          onChange={this.click.bind(this)}
+        <Toggle
+          toggled={this.state.toggled}
+          onToggle={this.toggle.bind(this)}
           label="Pump"
         />
       </div>

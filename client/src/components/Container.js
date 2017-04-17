@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import './Container.css';
 import {
   Table,
-  TableHead,
   TableBody,
+  TableHeader,
+  TableHeaderColumn,
   TableRow,
-  TableCell,
+  TableRowColumn
 } from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
-import DoneIcon from 'material-ui-icons/Done';
-import ClearIcon from 'material-ui-icons/Clear';
+import DoneIcon from 'material-ui/svg-icons/action/done';
+import ClearIcon from 'material-ui/svg-icons/content/clear';
 
 let id = 0;
 function createData(time, date, temperature, pH, EC, status) {
@@ -36,29 +37,29 @@ const data = [
 class Container extends Component {
   render() {
     return (
-      <Paper className="paper">
+      <Paper className="paper" zDepth={3}>
         <h3>{this.props.name}</h3>
         <Table>
-          <TableHead>
+          <TableHeader adjustForCheckbox={false} displaySelectAll={false}>
             <TableRow>
-              <TableCell>Time</TableCell>
-              <TableCell>Date</TableCell>
-              <TableCell>Temperature (C)</TableCell>
-              <TableCell>pH</TableCell>
-              <TableCell>EC</TableCell>
-              <TableCell>Status</TableCell>
+              <TableHeaderColumn>Time</TableHeaderColumn>
+              <TableHeaderColumn>Date</TableHeaderColumn>
+              <TableHeaderColumn>Temperature (C)</TableHeaderColumn>
+              <TableHeaderColumn>pH</TableHeaderColumn>
+              <TableHeaderColumn>EC</TableHeaderColumn>
+              <TableHeaderColumn>Status</TableHeaderColumn>
             </TableRow>
-          </TableHead>
-          <TableBody>
+          </TableHeader>
+          <TableBody displayRowCheckbox={false}>
             {data.map((n) => {
               return (
                 <TableRow key={n.id}>
-                  <TableCell>{n.time}</TableCell>
-                  <TableCell>{n.date}</TableCell>
-                  <TableCell>{n.temperature}</TableCell>
-                  <TableCell>{n.pH}</TableCell>
-                  <TableCell>{n.EC}</TableCell>
-                  <TableCell>{getStatusIcon(n.status)}</TableCell>
+                  <TableRowColumn>{n.time}</TableRowColumn>
+                  <TableRowColumn>{n.date}</TableRowColumn>
+                  <TableRowColumn>{n.temperature}</TableRowColumn>
+                  <TableRowColumn>{n.pH}</TableRowColumn>
+                  <TableRowColumn>{n.EC}</TableRowColumn>
+                  <TableRowColumn>{getStatusIcon(n.status)}</TableRowColumn>
                 </TableRow>
               );
             })}

@@ -1,5 +1,11 @@
 .LoginInput {
   background: #FFF176;
   height: 100vh;
-  padding-top: 40vh;
+  width: 100vw;
+  position: fixed;
+  padding-top: 30vh;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #FFF176 inset !important;
 }

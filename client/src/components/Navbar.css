@@ -1,10 +1,4 @@
-.Navbar {
-  position: 'relative';
-  marginTop: 30;
-  width: '100%';
-  float: left;
-}
-
-.MuiToolbar-root-3627194460 div {
-  float: right;
+.links a {
+  margin-top: 15px !important;
+  color: white !important;
 }

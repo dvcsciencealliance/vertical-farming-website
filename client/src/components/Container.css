@@ -6,7 +6,8 @@
   text-align: center;
 }
 
-.MuiTableCell-padding-316524091 {
+td,
+th {
   text-align: center !important;
 }
 

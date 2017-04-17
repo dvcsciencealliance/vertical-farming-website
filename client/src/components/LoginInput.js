@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import './LoginInput.css';
 import TextField from 'material-ui/TextField';
-import Button from 'material-ui/Button';
+import RaisedButton from 'material-ui/RaisedButton';
 
 class LoginInput extends Component {
   static propTypes = {
@@ -15,8 +15,10 @@ class LoginInput extends Component {
     password: ""
   };
 
-  click() {
-    console.log('Clicked');
+  login(event) {
+    if (event.key && event.key != "Enter") {
+      return;
+    }
     fetch('/login', {
       method: 'POST',
       headers: {
@@ -47,19 +49,21 @@ class LoginInput extends Component {
     return (
       <div className="LoginInput">
         <TextField
-          label="Username"
+          floatingLabelText="Username"
           onChange={(event) => this.setState({
             username: event.target.value
           })}
+          onKeyPress={this.login.bind(this)}
         /><br />
         <TextField
-          label="Password"
+          floatingLabelText="Password"
           type="password"
           onChange={(event) => this.setState({
             password: event.target.value
           })}
-        />
-        <Button onClick={this.click.bind(this)} raised primary>Login</Button>
+          onKeyPress={this.login.bind(this)}
+        /><br />
+        <RaisedButton label="Login" onTouchTap={this.login.bind(this)} primary={true} />
       </div>
     );
   }

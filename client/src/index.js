@@ -7,11 +7,18 @@ import Data from './pages/Data/Data';
 import Admin from './pages/Admin/Admin';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
+const muiTheme = getMuiTheme({
+  palette: {
+    primary1Color: '#4CAF50'
+  }
+});
+
 ReactDOM.render(
-  <MuiThemeProvider>
+  <MuiThemeProvider muiTheme={muiTheme}>
     <Router>
       <div>
         <Route exact path="/" component={Main}/>

@@ -1,26 +1,22 @@
 import React, { Component } from 'react';
 import './Navbar.css';
 import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import Text from 'material-ui/Text';
-import Button from 'material-ui/Button';
+import FlatButton from 'material-ui/FlatButton';
 import IconButton from 'material-ui/IconButton';
+import ViewHeadlineIcon from 'material-ui/svg-icons/action/view-headline';
 
 class Navbar extends Component {
   render() {
     return (
       <div className="Navbar">
-        <AppBar className="bar">
-          <Toolbar>
-            <a href="/">
-              <Text type="title" colorInherit className="flex">DVC Vertical Farming</Text>
-            </a>
-            <div>
-              {this.props.links.map(({ name, href }, index) => {
-                return <Button key={index} href={href} contrast>{name}</Button>
-              })}
-            </div>
-          </Toolbar>
+        <AppBar title={<a href="/">DVC Vertical Farming</a>}
+        iconElementLeft={<IconButton><ViewHeadlineIcon /></IconButton>}
+        className="bar">
+          <div className="links">
+            {this.props.links.map(({ name, href }, index) => {
+              return <FlatButton key={index} label={name} href={href} />
+            })}
+          </div>
         </AppBar>
       </div>
     );
