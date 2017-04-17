@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router';
 import './LoginInput.css';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
-import { browserHistory } from 'react-router';
 
 class LoginInput extends Component {
+  static propTypes = {
+    history: PropTypes.object.isRequired
+  }
+
   state = {
     username: "",
     password: ""
@@ -25,15 +30,12 @@ class LoginInput extends Component {
     })
     .then((response) => response.json())
     .then((responseJSON) => {
-      console.log(this.props.location);
-      console.log(responseJSON);
-      if (responseJSON.status) {
-        const location = this.props.location;
-        if (location.state && location.state.nextPathname) {
-          browserHistory.push(location.state.nextPathname);
-        } else {
-          browserHistory.push('/');
-        }
+      localStorage.dvcvertfarmingtoken = responseJSON.token;
+      if (responseJSON.success) {
+        console.log('Success!');
+        this.props.history.push('/admin');
+      } else {
+        this.props.history.push('/login');
       }
     })
     .catch((error) => {
@@ -63,4 +65,4 @@ class LoginInput extends Component {
   }
 }
 
-export default LoginInput;
+export default withRouter(LoginInput);

@@ -16,8 +16,8 @@ class Navbar extends Component {
               <Text type="title" colorInherit className="flex">DVC Vertical Farming</Text>
             </a>
             <div>
-              {this.props.links.map(function({ name, href }) {
-                return <Button href={href} contrast>{name}</Button>
+              {this.props.links.map(({ name, href }, index) => {
+                return <Button key={index} href={href} contrast>{name}</Button>
               })}
             </div>
           </Toolbar>

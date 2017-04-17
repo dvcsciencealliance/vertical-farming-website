@@ -40,16 +40,60 @@ router.post('/login', function(req, res) {
       }
 
       var token = jwt.sign(user, config.credentials.secret, {
-        expiresIn: 1440 // expires in 24 hours
+        expiresIn: 60 // expires in 1 hour
       });
 
       return res.json({
         success: true,
-        message: 'Authenticatoin succeedeed.',
+        message: 'Authentication succeeded.',
         token: token
       });
     });
   });
+});
+
+router.use(function(req, res, next) {
+  var token = req.body.token || req.query.token || req.headers['x-access-token'];
+
+  if (token) {
+    jwt.verify(token, config.credentials.secret, function(err, decoded) { 
+      if (err) {
+        return res.json({
+          success: false,
+          message: 'Failed to authenticate token.'
+        });    
+      } else {
+        req.decoded = decoded;    
+        next();
+      }
+    });
+  } else {
+    return res.send({ 
+      success: false, 
+      message: 'No token provided.' 
+    }); 
+  }
+});
+
+router.post('/token', function(req, res) {
+  return res.send({ 
+    success: true, 
+    message: 'Authenticated.' 
+  }); 
+});
+
+router.get('/pump', function(req, res) {
+  return res.send({ 
+    success: true,
+    toggled: false 
+  }); 
+});
+
+router.post('/pump', function(req, res) {
+  return res.send({ 
+    success: true, 
+    message: 'Toggled.'
+  }); 
 });
 
 module.exports = router;
