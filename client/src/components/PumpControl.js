@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import './PumpControl.css';
 import Toggle from 'material-ui/Toggle';
+import Paper from 'material-ui/Paper';
 
 class PumpControl extends Component {
   static propTypes = {
@@ -69,11 +70,13 @@ class PumpControl extends Component {
   render() {
     return (
       <div className="PumpControl">
-        <Toggle
-          toggled={this.state.toggled}
-          onToggle={this.toggle.bind(this)}
-          label="Pump"
-        />
+        <Paper className="paper" zDepth={3}>
+          <Toggle
+            toggled={this.state.toggled}
+            onToggle={this.toggle.bind(this)}
+            label="Pump"
+          />
+        </Paper>
       </div>
     );
   }

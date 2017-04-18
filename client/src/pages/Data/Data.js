@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './Data.css';
+import AboutButton from '../../components/AboutButton';
 import Navbar from '../../components/Navbar';
+import TimeInput from '../../components/TimeInput';
 
 class Data extends Component {
   render() {
@@ -16,6 +18,9 @@ class Data extends Component {
           href: '/login'
         }
         ]}/>
+        <TimeInput />
+        
+        <AboutButton />
       </div>
     );
   }

@@ -1,7 +1,6 @@
-.PumpControl div div label {
-  margin-left: 45vw;
-}
-
-.PumpControl div div div {
-  margin-right: 55vw !important;
+.PumpControl .paper {
+  width: 150px;
+  padding: 25px 10px;
+  padding-right: 25px;
+  height: 75px;
 }

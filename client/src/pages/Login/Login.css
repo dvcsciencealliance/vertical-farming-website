@@ -3,9 +3,9 @@
   height: 100vh;
   width: 100vw;
   position: fixed;
-  padding-top: 30vh;
+  padding-top: 25vh;
 }
 
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px #FFF176 inset !important;
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
 }

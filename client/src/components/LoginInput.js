@@ -4,6 +4,7 @@ import { withRouter } from 'react-router';
 import './LoginInput.css';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import Paper from 'material-ui/Paper';
 
 class LoginInput extends Component {
   static propTypes = {
@@ -48,22 +49,24 @@ class LoginInput extends Component {
   render() {
     return (
       <div className="LoginInput">
-        <TextField
-          floatingLabelText="Username"
-          onChange={(event) => this.setState({
-            username: event.target.value
-          })}
-          onKeyPress={this.login.bind(this)}
-        /><br />
-        <TextField
-          floatingLabelText="Password"
-          type="password"
-          onChange={(event) => this.setState({
-            password: event.target.value
-          })}
-          onKeyPress={this.login.bind(this)}
-        /><br />
-        <RaisedButton label="Login" onTouchTap={this.login.bind(this)} primary={true} />
+        <Paper className="paper" zDepth={3}>
+          <TextField
+            floatingLabelText="Username"
+            onChange={(event) => this.setState({
+              username: event.target.value
+            })}
+            onKeyPress={this.login.bind(this)}
+          /><br />
+          <TextField
+            floatingLabelText="Password"
+            type="password"
+            onChange={(event) => this.setState({
+              password: event.target.value
+            })}
+            onKeyPress={this.login.bind(this)}
+          /><br />
+          <RaisedButton label="Login" onTouchTap={this.login.bind(this)} primary={true} />
+        </Paper>
       </div>
     );
   }

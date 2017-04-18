@@ -1,3 +1,11 @@
 .LoginInput {
   text-align: center;
 }
+
+.LoginInput .paper {
+  width: 350px;
+}
+
+.paper div:last-child {
+  margin-bottom: 15px;
+}

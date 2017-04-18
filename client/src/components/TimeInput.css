@@ -1,0 +1,7 @@
+.TimeInput .paper {
+  width: calc(15vw + 175px);
+}
+
+.TimeInput .paper div div div {
+  width: 125px !important;
+}
