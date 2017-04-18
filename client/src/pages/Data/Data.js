@@ -3,23 +3,56 @@ import './Data.css';
 import AboutButton from '../../components/AboutButton';
 import Navbar from '../../components/Navbar';
 import TimeInput from '../../components/TimeInput';
+import checkAuthenticity from '../../lib/checkAuthenticity';
 
 class Data extends Component {
+  state = {
+    authenticated: false
+  };
+
+  componentWillMount() {
+    const token = localStorage.dvcvertfarmingtoken;
+    const _this = this;
+    checkAuthenticity(token, function(success) {
+      if (success) {
+        _this.setState({
+          authenticated: true
+        });
+      }
+    });
+  }
+
   render() {
+    let button;
+    if (this.state.authenticated) {
+      button = {
+        name: 'Admin',
+        href: '/admin'
+      }
+    } else {
+      button = {
+        name: 'Login',
+        href: '/login'
+      }
+    }
+
     return (
       <div className="Data">
-        <Navbar links={[
+        <Navbar
+        title="DVC Vertical Farming"
+        links={[
         {
-          name: 'Status',
+          name: 'Main',
           href: '/'
         },
         {
-          name: 'Login',
-          href: '/login'
-        }
+          name: 'About',
+          href: '/about'
+        },
+        button
         ]}/>
         <TimeInput />
-        
+
         <AboutButton />
       </div>
     );

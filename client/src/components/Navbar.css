@@ -1,4 +1,9 @@
-.links a {
+.Navbar .bar {
+  position: fixed !important;
+  top: 0;
+}
+
+.Navbar .links a {
   margin-top: 15px !important;
   color: white !important;
 }

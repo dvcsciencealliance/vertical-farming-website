@@ -37,35 +37,37 @@ const data = [
 class Container extends Component {
   render() {
     return (
-      <Paper className="paper" zDepth={3}>
-        <h3>{this.props.name}</h3>
-        <Table>
-          <TableHeader adjustForCheckbox={false} displaySelectAll={false}>
-            <TableRow>
-              <TableHeaderColumn>Time</TableHeaderColumn>
-              <TableHeaderColumn>Date</TableHeaderColumn>
-              <TableHeaderColumn>Temperature (C)</TableHeaderColumn>
-              <TableHeaderColumn>pH</TableHeaderColumn>
-              <TableHeaderColumn>EC</TableHeaderColumn>
-              <TableHeaderColumn>Status</TableHeaderColumn>
-            </TableRow>
-          </TableHeader>
-          <TableBody displayRowCheckbox={false}>
-            {data.map((n) => {
-              return (
-                <TableRow key={n.id}>
-                  <TableRowColumn>{n.time}</TableRowColumn>
-                  <TableRowColumn>{n.date}</TableRowColumn>
-                  <TableRowColumn>{n.temperature}</TableRowColumn>
-                  <TableRowColumn>{n.pH}</TableRowColumn>
-                  <TableRowColumn>{n.EC}</TableRowColumn>
-                  <TableRowColumn>{getStatusIcon(n.status)}</TableRowColumn>
-                </TableRow>
-              );
-            })}
-          </TableBody>
-        </Table>
-      </Paper>
+      <div className="Container">
+        <Paper className="paper" zDepth={3}>
+          <h3>{this.props.name}</h3>
+          <Table>
+            <TableHeader adjustForCheckbox={false} displaySelectAll={false}>
+              <TableRow>
+                <TableHeaderColumn>Time</TableHeaderColumn>
+                <TableHeaderColumn>Date</TableHeaderColumn>
+                <TableHeaderColumn>Temperature (C)</TableHeaderColumn>
+                <TableHeaderColumn>pH</TableHeaderColumn>
+                <TableHeaderColumn>EC</TableHeaderColumn>
+                <TableHeaderColumn>Status</TableHeaderColumn>
+              </TableRow>
+            </TableHeader>
+            <TableBody displayRowCheckbox={false}>
+              {data.map((n) => {
+                return (
+                  <TableRow key={n.id}>
+                    <TableRowColumn>{n.time}</TableRowColumn>
+                    <TableRowColumn>{n.date}</TableRowColumn>
+                    <TableRowColumn>{n.temperature}</TableRowColumn>
+                    <TableRowColumn>{n.pH}</TableRowColumn>
+                    <TableRowColumn>{n.EC}</TableRowColumn>
+                    <TableRowColumn>{getStatusIcon(n.status)}</TableRowColumn>
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </Paper>
+      </div>
     );
   }
 }

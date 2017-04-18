@@ -1,5 +1,6 @@
-.paper {
+.Container .paper {
   margin: 25px auto;
+  padding-top: 25px;
   overflow-x: auto;
   width: 80vw;
   text-align: center;
@@ -10,6 +11,7 @@ th {
   text-align: center !important;
 }
 
-h3 {
+.Container h3 {
   color: #455A64;
+  font-size: 1.5em;
 }

@@ -23,9 +23,11 @@ class Admin extends Component {
   render() {
     return (
       <div className="Admin">
-        <Navbar links={[
+        <Navbar
+        title="DVC Vertical Farming"
+        links={[
         {
-          name: 'Status',
+          name: 'Main',
           href: '/'
         },
         {

@@ -23,7 +23,9 @@ class Login extends Component {
   render() {
     return (
       <div className="Login">
-        <Navbar links={[]}/>
+        <Navbar
+        title="DVC Vertical Farming"
+        links={[]}/>
         <LoginInput />
       </div>
     );

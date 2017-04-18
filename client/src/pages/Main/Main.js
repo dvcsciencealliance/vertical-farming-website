@@ -40,16 +40,22 @@ class Main extends Component {
     return (
       <div className="Main">
         <StackAnimation />
-        <Navbar links={[
+        <Navbar
+        title="DVC Vertical Farming"
+        links={[
+        {
+          name: 'About',
+          href: '/about'
+        },
         {
           name: 'Data',
           href: '/data'
         },
         button
         ]}/>
-        <Container name="Water"/>
-        <Container name="Plants"/>
-        <Container name="Air"/>
+        <Container name="Water" />
+        <Container name="Plants" />
+        <Container name="Air" />
         <AboutButton />
       </div>
     );

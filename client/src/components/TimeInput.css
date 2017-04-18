@@ -1,5 +1,8 @@
 .TimeInput .paper {
+  margin: 25px auto;
   width: calc(15vw + 175px);
+  padding-top: 25px;
+  text-align: center;
 }
 
 .TimeInput .paper div div div {

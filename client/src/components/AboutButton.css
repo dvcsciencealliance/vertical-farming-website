@@ -3,3 +3,8 @@
   right: 3vw;
   bottom: 3vh;
 }
+
+.AboutButton .button {
+  height: inherit;
+  padding: inherit;
+}

@@ -34,7 +34,7 @@ body *, body *:before, body *:after {
 #Infrastructure-SVG {
   max-height: 400px;
   max-width: 100%;
-  margin-top: 20vh;
+  margin-top: 30vh;
 }
 
 .Infrastructure-shadow {
