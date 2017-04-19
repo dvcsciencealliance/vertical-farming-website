@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import './About.css';
 import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 import checkAuthenticity from '../../lib/checkAuthenticity';
 import WOW from 'wowjs';
 
@@ -61,11 +62,11 @@ class About extends Component {
         button
         ]}/>
         <div id="first" className="row">
-          <h1 className="wow fadeIn ten columns offset-by-one">DVC Vertical Farming</h1>
+          <h1 className="wow fadeIn eight columns offset-by-two">DVC Vertical Farming</h1>
           <p className="wow fadeIn ten columns offset-by-one">An intelligent vertical farm at Diablo Valley College</p>
         </div>
         <div id="second" className="row">
-          <p className="wow fadeIn eight columns offset-by-two " data-wow-offset="80">
+          <p className="wow fadeIn eight columns offset-by-two" data-wow-offset="80">
             Aquaponics & vertical farming current best practices will be thoroughly studied and researched to design, engineer and develop working models that will be used to raise consumable fish, which provide fertilizer through their excretions that will be used to raise edible plants in an integrated system.
           </p>
           <p className="wow fadeIn eight columns offset-by-two" data-wow-offset="80">
@@ -73,8 +74,9 @@ class About extends Component {
           </p>
         </div>
         <div id="third" className="row">
-          <p className="wow fadeIn ten columns offset-by-one" data-wow-offset="80">All of our research and software is <span className="emphasize">open source</span> and available to the public.</p>
+          <p className="wow fadeIn eight columns offset-by-two" data-wow-offset="80">All of our research and software is <span className="emphasize">open source</span> and available to the public.</p>
         </div>
+        <Footer/>
       </div>
     );
   }

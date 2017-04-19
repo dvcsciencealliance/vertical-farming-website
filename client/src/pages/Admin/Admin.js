@@ -4,6 +4,7 @@ import { withRouter } from 'react-router';
 import './Admin.css';
 import Navbar from '../../components/Navbar';
 import PumpControl from '../../components/PumpControl';
+import Footer from '../../components/Footer';
 import checkAuthenticity from '../../lib/checkAuthenticity';
 
 class Admin extends Component {

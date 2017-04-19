@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import './StackAnimation.css';
 import { TweenMax, Elastic, TimelineMax } from "gsap";
-import $ from "jquery";
+import './StackAnimation.css';
 
 class StackAnimation extends Component {
   componentDidMount() {
@@ -40,8 +39,10 @@ class StackAnimation extends Component {
     });
 
     setTimeout(function() {
-      $("#animation-container").fadeOut( "medium");
-    }, 2500);
+      const container = document.getElementById("animation-container");
+      container.classList.add("animated");
+      container.classList.add("fadeOut");
+    }, 2250);
   };
 
   render() {

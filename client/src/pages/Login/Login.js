@@ -4,6 +4,7 @@ import { withRouter } from 'react-router';
 import './Login.css';
 import Navbar from '../../components/Navbar';
 import LoginInput from '../../components/LoginInput';
+import Footer from '../../components/Footer';
 import checkAuthenticity from '../../lib/checkAuthenticity';
 
 class Login extends Component {

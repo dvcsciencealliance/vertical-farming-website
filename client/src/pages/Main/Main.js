@@ -4,6 +4,7 @@ import StackAnimation from '../../components/StackAnimation';
 import Navbar from '../../components/Navbar';
 import Container from '../../components/Container';
 import AboutButton from '../../components/AboutButton';
+import Footer from '../../components/Footer';
 import checkAuthenticity from '../../lib/checkAuthenticity';
 
 class Main extends Component {
@@ -57,6 +58,7 @@ class Main extends Component {
         <Container name="Plants" />
         <Container name="Air" />
         <AboutButton />
+        <Footer/>
       </div>
     );
   }

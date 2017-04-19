@@ -29,12 +29,14 @@ body *, body *:before, body *:after {
   background: white;
   z-index: 1;
   position: fixed;
+  -webkit-animation-duration: 0.5s; /* Safari 4.0 - 8.0 */
+  animation-duration: 0.5s;
 }
 
 #Infrastructure-SVG {
   max-height: 400px;
   max-width: 100%;
-  margin-top: 30vh;
+  margin-top: 23vh;
 }
 
 .Infrastructure-shadow {
@@ -43,7 +45,7 @@ body *, body *:before, body *:after {
 
 .Infrastucture-box {
   fill: none;
-  stroke: #0072FF;
+  stroke: #00695C;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-miterlimit: 10;
@@ -52,7 +54,7 @@ body *, body *:before, body *:after {
 
 .Infrastucture-borderLine {
   fill: none;
-  stroke: #0072FF;
+  stroke: #00695C;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-miterlimit: 10;
@@ -68,5 +70,6 @@ body *, body *:before, body *:after {
 }
 
 .Infrastructure-server {
-  fill: url(#Infrastructure-serverGradient);
+  fill: #C8E6C9;
+  opacity: 0.2;
 }

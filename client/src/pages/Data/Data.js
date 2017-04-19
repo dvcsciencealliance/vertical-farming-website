@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import './Data.css';
 import AboutButton from '../../components/AboutButton';
 import Navbar from '../../components/Navbar';
 import TimeInput from '../../components/TimeInput';
+import Footer from '../../components/Footer';
 import checkAuthenticity from '../../lib/checkAuthenticity';
+import './Data.css';
 
 class Data extends Component {
   state = {
@@ -52,8 +53,8 @@ class Data extends Component {
         button
         ]}/>
         <TimeInput />
-
         <AboutButton />
+        <Footer/>
       </div>
     );
   }
