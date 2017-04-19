@@ -42,6 +42,9 @@ class StackAnimation extends Component {
       const container = document.getElementById("animation-container");
       container.classList.add("animated");
       container.classList.add("fadeOut");
+      setTimeout(function() {
+        container.remove();
+      }, 550);
     }, 2250);
   };
 
