@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: white;
+  color: #455A64;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: #F5F5F5;
+}
+
+/*.About .Navbar .bar {
+  overflow: hidden;
+}
+*/
+
+.button {
+  height: inherit;
+  padding: inherit;
+  border: 0;
+}

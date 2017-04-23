@@ -1,0 +1,7 @@
+.Navbar {
+  z-index: 2;
+}
+
+.Main .Navbar + .Container {
+  padding-top: 64px;
+}

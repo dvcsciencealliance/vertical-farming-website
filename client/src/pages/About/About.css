@@ -1,0 +1,43 @@
+#first,
+#second,
+#third {
+  padding-top: 100px;
+  padding-bottom: 75px;
+  text-align: center;
+}
+
+#first {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background: #4CAF50;
+  color: #F5F5F5;
+}
+
+#second {
+  background: #E8F5E9;
+}
+
+#third {
+  background: #C8E6C9;
+}
+
+p .emphasize {
+  font-weight: bold
+}
+
+.About h1 {
+  font-size: 3em;
+  font-weight: 400;
+}
+
+#first p {
+  font-size: 2em;
+}
+
+#second p {
+  font-size: 1.5em;
+}
+
+#third p {
+  font-size: 2em;
+}

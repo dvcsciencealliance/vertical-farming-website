@@ -1,0 +1,16 @@
+.Container .paper {
+  margin: 25px auto;
+  padding-top: 25px;
+  overflow-x: auto;
+  width: 80vw;
+  text-align: center;
+}
+
+td,
+th {
+  text-align: center !important;
+}
+
+.Container h3 {
+  font-size: 1.5em;
+}
