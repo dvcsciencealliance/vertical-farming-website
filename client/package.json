@@ -8,6 +8,7 @@
     "auth0-js": "^8.5.0",
     "bcrypt": "^1.0.2",
     "body-parser": "^1.17.1",
+    "chart.js": "^2.5.0",
     "concurrently": "^3.4.0",
     "cookie-parser": "^1.4.3",
     "font-awesome": "^4.7.0",
