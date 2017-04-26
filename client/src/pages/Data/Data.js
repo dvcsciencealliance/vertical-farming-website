@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from '../../components/Navbar';
-import DataVisualization from '../../components/DataVisualization';
+import DataContainer from '../../components/DataContainer';
 import Footer from '../../components/Footer';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import AddIcon from 'material-ui/svg-icons/content/add';
@@ -64,7 +64,7 @@ class Data extends Component {
         },
         button
         ]}/>
-        { this.state.children.map((id) => <DataVisualization key={id} id={id} />)}
+        { this.state.children.map((id) => <DataContainer key={id} id={id} />)}
         <FloatingActionButton onTouchTap={() => this.add()} className="button">
           <AddIcon />
         </FloatingActionButton>

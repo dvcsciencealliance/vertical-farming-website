@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Paper from 'material-ui/Paper';
-import DataInput from './DataInput';
 import Chart from 'chart.js'
+import RaisedButton from 'material-ui/RaisedButton';
 import './DataVisualization.css';
 
 function calculate(startDate, startTime, endDate, endTime) {
@@ -10,11 +10,15 @@ function calculate(startDate, startTime, endDate, endTime) {
 
 class DataVisualization extends Component {
   state = {
-    startDate: null,
-    startTime: null,
-    endDate: null,
-    endTime: null
+    startDate: this.props.inputData.startDate,
+    startTime: this.props.inputData.startTime,
+    endDate: this.props.inputData.endDate,
+    endTime: this.props.inputData.endTime
   };
+
+  edit() {
+    this.props.edit();
+  }
 
   componentDidMount() {
     var ctx = document.getElementById(this.props.id);
@@ -38,12 +42,10 @@ class DataVisualization extends Component {
   render() {
     return (
       <div className="DataVisualization">
-        <Paper className="paper" zDepth={1}>
-          <div id="chart">
-            <canvas id={this.props.id}></canvas>
-          </div>
-          <DataInput />
-        </Paper>
+        <div id="chart">
+          <canvas id={this.props.id}></canvas>
+        </div>
+        <RaisedButton label="Edit" onTouchTap={this.edit.bind(this)} primary={true} />
       </div>
     );
   }

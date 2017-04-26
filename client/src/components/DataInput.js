@@ -7,14 +7,14 @@ import Paper from 'material-ui/Paper';
 
 class DataInput extends Component {
   state = {
-    start_date: new Date(),
-    start_time: new Date(new Date().getTime() - 30*60000),
-    end_date: new Date(),
-    end_time: new Date()
+    startDate: this.props.inputData.startDate,
+    startTime: this.props.inputData.startTime,
+    endDate: this.props.inputData.endDate,
+    endTime: this.props.inputData.endTime
   };
 
   submit() {
-
+    this.props.submit(this.state.startDate, this.state.startTime, this.state.endDate, this.state.endTime);
   }
 
   render() {
@@ -24,26 +24,26 @@ class DataInput extends Component {
           <h3>Start</h3>
           <DatePicker
             autoOk={true}
-            value={this.state.start_date}
-            onChange={(event, date) => this.setState({ start_date: date })}
+            value={this.state.startDate}
+            onChange={(event, date) => this.setState({ startDate: date })}
           />
           <TimePicker
             autoOk={true}
-            value={this.state.start_time}
-            onChange={(event, time) => this.setState({ start_time: time })}
+            value={this.state.startTime}
+            onChange={(event, time) => this.setState({ startTime: time })}
           />
         </div>
         <div>
           <h3>End</h3>
           <DatePicker
             autoOk={true}
-            value={this.state.end_date}
-            onChange={(event, date) => this.setState({ end_date: date })}
+            value={this.state.endDate}
+            onChange={(event, date) => this.setState({ endDate: date })}
           />
           <TimePicker
             autoOk={true}
-            value={this.state.end_time}
-            onChange={(event, time) => this.setState({ end_time: time })}
+            value={this.state.endTime}
+            onChange={(event, time) => this.setState({ endTime: time })}
           />
         </div>
         <RaisedButton label="Submit" onTouchTap={this.submit.bind(this)} primary={true} />
