@@ -74,4 +74,5 @@ class Data extends Component {
   }
 }
 
+
 export default Data;

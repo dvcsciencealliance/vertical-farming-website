@@ -10,6 +10,10 @@ class DataContainer extends Component {
     startTime: new Date(new Date().getTime() - 30*60000),
     endDate: new Date(),
     endTime: new Date(),
+    location: "Water",
+    water: true,
+    plants: false,
+    air: false,
     editing: false
   };
 
@@ -36,14 +40,22 @@ class DataContainer extends Component {
           "startDate": this.state.startDate,
           "startTime": this.state.startTime,
           "endDate": this.state.endDate,
-          "endTime": this.state.endTime
+          "endTime": this.state.endTime,
+          "location": this.state.location,
+          "water": this.state.water,
+          "plants": this.state.plants,
+          "air": this.state.air
         }}/>;
     } else {
       view = <DataVisualization id={"visualization-" + this.props.id} edit={this.edit.bind(this)} inputData={{
           "startDate": this.state.startDate,
           "startTime": this.state.startTime,
           "endDate": this.state.endDate,
-          "endTime": this.state.endTime
+          "endTime": this.state.endTime,
+          "location": this.state.location,
+          "water": this.state.water,
+          "plants": this.state.plants,
+          "air": this.state.air
         }}/>;
     }
 

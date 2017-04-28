@@ -13,7 +13,9 @@ class DataVisualization extends Component {
     startDate: this.props.inputData.startDate,
     startTime: this.props.inputData.startTime,
     endDate: this.props.inputData.endDate,
-    endTime: this.props.inputData.endTime
+    endTime: this.props.inputData.endTime,
+    location: this.props.inputData.location,
+    dataSets: this.props.inputData.dataSets
   };
 
   edit() {
