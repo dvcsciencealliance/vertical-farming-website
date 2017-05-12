@@ -15,14 +15,11 @@ class DataInput extends Component {
     startTime: this.props.inputData.startTime,
     endDate: this.props.inputData.endDate,
     endTime: this.props.inputData.endTime,
-    sensor: this.props.inputData.sensor,
-    fishTank: this.props.inputData.fishTank,
-    firstReservoir: this.props.inputData.firstReservoir,
-    secondReservoir: this.props.inputData.secondReservoir
+    sensor: this.props.inputData.sensor
   };
 
   submit() {
-    this.props.submit(this.state.startDate, this.state.startTime, this.state.endDate, this.state.endTime, this.state.sensor, this.state.fishTank, this.state.firstReservoir, this.state.secondReservoir);
+    this.props.submit(this.state.startDate, this.state.startTime, this.state.endDate, this.state.endTime, this.state.sensor);
   }
 
   render() {
@@ -65,32 +62,6 @@ class DataInput extends Component {
             <MenuItem value={"Conductivity"} primaryText="Conductivity" />
             <MenuItem value={"Nitrate"} primaryText="Nitrate" />
           </SelectField>
-        </div>
-        <div>
-          <h3>Locations</h3>
-          <List>
-            <ListItem
-              leftCheckbox={<Checkbox
-                defaultChecked={this.state.fishTank}
-                onCheck={(event, checked) => this.setState({ fishTank: checked })}
-                />}
-              primaryText="Fish Tank"
-            />
-            <ListItem
-              leftCheckbox={<Checkbox
-                defaultChecked={this.state.firstReservoir}
-                onCheck={(event, checked) => this.setState({ firstReservoir: checked })}
-                />}
-              primaryText="First Reservoir"
-            />
-            <ListItem
-              leftCheckbox={<Checkbox
-                defaultChecked={this.state.secondReservoir}
-                onCheck={(event, checked) => this.setState({ secondReservoir: checked })}
-                />}
-              primaryText="Second Reservoir"
-            />
-          </List>
         </div>
         <RaisedButton label="Submit" onTouchTap={this.submit.bind(this)} primary={true} />
       </div>

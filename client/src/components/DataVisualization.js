@@ -14,10 +14,7 @@ class DataVisualization extends Component {
     startTime: this.props.inputData.startTime,
     endDate: this.props.inputData.endDate,
     endTime: this.props.inputData.endTime,
-    sensor: this.props.inputData.sensor,
-    fishTank: this.props.inputData.fishTank,
-    firstReservoir: this.props.inputData.firstReservoir,
-    secondReservoir: this.props.inputData.secondReservoir
+    sensor: this.props.inputData.sensor
   };
 
   edit() {
@@ -39,10 +36,7 @@ class DataVisualization extends Component {
         startTime: this.state.startTime,
         endDate: this.state.endDate,
         endTime: this.state.endTime,
-        sensor: this.state.sensor,
-        fishTank: this.state.fishTank,
-        firstReservoir: this.state.firstReservoir,
-        secondReservoir: this.state.secondReservoir
+        sensor: this.state.sensor
       })
     })
     .then((response) => response.json())
@@ -59,6 +53,8 @@ class DataVisualization extends Component {
     .catch((error) => {
       console.error(error);
     });
+
+    let datasets = [];
 
     const fishTankDataset = {
       label: 'Fish Tank',
@@ -84,10 +80,9 @@ class DataVisualization extends Component {
       borderWidth: 1
     }
 
-    let datasets = [];
-    if (this.state.fishTank) datasets.push(fishTankDataset);
-    if (this.state.firstReservoir) datasets.push(firstReservoirDataset);
-    if (this.state.secondReservoir) datasets.push(secondReservoirDataset);
+    datasets.push(fishTankDataset);
+    datasets.push(firstReservoirDataset);
+    datasets.push(secondReservoirDataset);
 
     var ctx = document.getElementById(this.props.id);
     let myChart = new Chart(ctx, {

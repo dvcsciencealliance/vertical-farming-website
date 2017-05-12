@@ -11,9 +11,6 @@ class DataContainer extends Component {
     endDate: new Date(),
     endTime: new Date(),
     sensor: "pH",
-    fishTank: true,
-    firstReservoir: false,
-    secondReservoir: false,
     editing: false
   };
 
@@ -23,16 +20,13 @@ class DataContainer extends Component {
     });
   }
 
-  submit(startDate, startTime, endDate, endTime, sensor, fishTank, firstReservoir, secondReservoir) {
+  submit(startDate, startTime, endDate, endTime, sensor) {
     this.setState({
       startDate,
       startTime,
       endDate,
       endTime,
       sensor,
-      fishTank,
-      firstReservoir,
-      secondReservoir,
       editing: false
     });
   }
@@ -45,10 +39,7 @@ class DataContainer extends Component {
           "startTime": this.state.startTime,
           "endDate": this.state.endDate,
           "endTime": this.state.endTime,
-          "sensor": this.state.sensor,
-          "fishTank": this.state.fishTank,
-          "firstReservoir": this.state.firstReservoir,
-          "secondReservoir": this.state.secondReservoir
+          "sensor": this.state.sensor
         }}/>;
     } else {
       view = <DataVisualization id={"visualization-" + this.props.id} edit={this.edit.bind(this)} inputData={{
@@ -56,10 +47,7 @@ class DataContainer extends Component {
           "startTime": this.state.startTime,
           "endDate": this.state.endDate,
           "endTime": this.state.endTime,
-          "sensor": this.state.sensor,
-          "fishTank": this.state.fishTank,
-          "firstReservoir": this.state.firstReservoir,
-          "secondReservoir": this.state.secondReservoir
+          "sensor": this.state.sensor
         }}/>;
     }
 
