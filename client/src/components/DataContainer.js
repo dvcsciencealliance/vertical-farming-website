@@ -10,10 +10,10 @@ class DataContainer extends Component {
     startTime: new Date(new Date().getTime() - 30*60000),
     endDate: new Date(),
     endTime: new Date(),
-    location: "Water",
-    water: true,
-    plants: false,
-    air: false,
+    sensor: "pH",
+    fishTank: true,
+    firstReservoir: false,
+    secondReservoir: false,
     editing: false
   };
 
@@ -23,12 +23,16 @@ class DataContainer extends Component {
     });
   }
 
-  submit(startDate, startTime, endDate, endTime) {
+  submit(startDate, startTime, endDate, endTime, sensor, fishTank, firstReservoir, secondReservoir) {
     this.setState({
       startDate,
       startTime,
       endDate,
       endTime,
+      sensor,
+      fishTank,
+      firstReservoir,
+      secondReservoir,
       editing: false
     });
   }
@@ -41,10 +45,10 @@ class DataContainer extends Component {
           "startTime": this.state.startTime,
           "endDate": this.state.endDate,
           "endTime": this.state.endTime,
-          "location": this.state.location,
-          "water": this.state.water,
-          "plants": this.state.plants,
-          "air": this.state.air
+          "sensor": this.state.sensor,
+          "fishTank": this.state.fishTank,
+          "firstReservoir": this.state.firstReservoir,
+          "secondReservoir": this.state.secondReservoir
         }}/>;
     } else {
       view = <DataVisualization id={"visualization-" + this.props.id} edit={this.edit.bind(this)} inputData={{
@@ -52,10 +56,10 @@ class DataContainer extends Component {
           "startTime": this.state.startTime,
           "endDate": this.state.endDate,
           "endTime": this.state.endTime,
-          "location": this.state.location,
-          "water": this.state.water,
-          "plants": this.state.plants,
-          "air": this.state.air
+          "sensor": this.state.sensor,
+          "fishTank": this.state.fishTank,
+          "firstReservoir": this.state.firstReservoir,
+          "secondReservoir": this.state.secondReservoir
         }}/>;
     }
 

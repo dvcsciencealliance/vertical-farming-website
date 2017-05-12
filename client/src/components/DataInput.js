@@ -15,21 +15,21 @@ class DataInput extends Component {
     startTime: this.props.inputData.startTime,
     endDate: this.props.inputData.endDate,
     endTime: this.props.inputData.endTime,
-    location: this.props.inputData.location,
-    water: this.props.inputData.water,
-    plants: this.props.inputData.plants,
-    air: this.props.inputData.air
+    sensor: this.props.inputData.sensor,
+    fishTank: this.props.inputData.fishTank,
+    firstReservoir: this.props.inputData.firstReservoir,
+    secondReservoir: this.props.inputData.secondReservoir
   };
 
   submit() {
-    this.props.submit(this.state.startDate, this.state.startTime, this.state.endDate, this.state.endTime, this.state.location, this.state.dataSets);
+    this.props.submit(this.state.startDate, this.state.startTime, this.state.endDate, this.state.endTime, this.state.sensor, this.state.fishTank, this.state.firstReservoir, this.state.secondReservoir);
   }
 
   render() {
     return (
       <div className="DataInput">
         <div>
-          <h3>Start</h3>
+          <h3>Start time</h3>
           <DatePicker
             autoOk={true}
             value={this.state.startDate}
@@ -42,7 +42,7 @@ class DataInput extends Component {
           />
         </div>
         <div>
-          <h3>End</h3>
+          <h3>End time</h3>
           <DatePicker
             autoOk={true}
             value={this.state.endDate}
@@ -55,39 +55,40 @@ class DataInput extends Component {
           />
         </div>
         <div>
-          <h3>Location</h3>
+          <h3>Sensor</h3>
           <SelectField
-            value={this.state.location}
-            onChange={(event, index, value) => this.setState({ location: value })}
+            value={this.state.sensor}
+            onChange={(event, index, value) => this.setState({ sensor: value })}
             >
-            <MenuItem value={"Water"} primaryText="Water" />
-            <MenuItem value={"Plants"} primaryText="Plants" />
-            <MenuItem value={"Air"} primaryText="Air" />
+            <MenuItem value={"pH"} primaryText="pH" />
+            <MenuItem value={"Tempertature"} primaryText="Temperature" />
+            <MenuItem value={"Conductivity"} primaryText="Conductivity" />
+            <MenuItem value={"Nitrate"} primaryText="Nitrate" />
           </SelectField>
         </div>
         <div>
-          <h3>Data Sets</h3>
+          <h3>Locations</h3>
           <List>
             <ListItem
               leftCheckbox={<Checkbox
-                defaultChecked={this.state.water}
-                onChange={(event, checked) => this.setState({ water: checked })}
+                defaultChecked={this.state.fishTank}
+                onCheck={(event, checked) => this.setState({ fishTank: checked })}
                 />}
-              primaryText="Water"
+              primaryText="Fish Tank"
             />
             <ListItem
               leftCheckbox={<Checkbox
-                defaultChecked={this.state.plants}
-                onChange={(event, checked) => this.setState({ plants: checked })}
+                defaultChecked={this.state.firstReservoir}
+                onCheck={(event, checked) => this.setState({ firstReservoir: checked })}
                 />}
-              primaryText="Plants"
+              primaryText="First Reservoir"
             />
             <ListItem
               leftCheckbox={<Checkbox
-                defaultChecked={this.state.air}
-                onChange={(event, checked) => this.setState({ air: checked })}
+                defaultChecked={this.state.secondReservoir}
+                onCheck={(event, checked) => this.setState({ secondReservoir: checked })}
                 />}
-              primaryText="Air"
+              primaryText="Second Reservoir"
             />
           </List>
         </div>

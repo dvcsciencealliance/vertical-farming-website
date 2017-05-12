@@ -30,6 +30,33 @@ class About extends Component {
 
   componentDidMount() {
     new WOW.WOW().init();
+
+    function isInViewport(element) {
+      var rect = element.getBoundingClientRect();
+
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /*or $(window).height() */
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
+      );
+    }
+
+    var element = document.getElementById('first');
+    var navbar = document.querySelector('.Navbar .bar');
+    var visible = isInViewport(element);
+    console.log(navbar);
+    window.addEventListener('scroll', function(e) {
+      if (!visible && isInViewport(element)) {
+        navbar.style.boxShadow = 'none';
+        visible = true;
+        console.log('hola javier');
+      } else if (visible && !isInViewport(element)) {
+        navbar.style.boxShadow = 'rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px';
+        visible = false;
+        console.log('heyyyy');
+      }
+    }); 
   }
 
   render() {
