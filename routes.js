@@ -10,7 +10,21 @@ router.use('/', express.static(path.join(__dirname, 'client/build')));
 
 router.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'client/build/index.html'));
-})
+});
+
+router.post('/data', function(req, res) {
+  // pool.query("select * from data where username = $1", [req.body.username], function(err, response) {
+  //   if (err) {
+  //     return console.error('Error running query', err);
+  //   }
+
+  //   if (!response.rows[0]) {
+  //     return res.json({
+  //       success: false,
+  //       message: 'Authentication failed.'
+  //     });
+  //   }
+});
 
 router.post('/login', function(req, res) {
   // bcrypt.hash("{ PASSWORD }", config.credentials.saltRounds).then(function(hash) {

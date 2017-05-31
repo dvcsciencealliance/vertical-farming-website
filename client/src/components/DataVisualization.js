@@ -3,6 +3,7 @@ import Paper from 'material-ui/Paper';
 import Chart from 'chart.js'
 import RaisedButton from 'material-ui/RaisedButton';
 import './DataVisualization.css';
+import moment from 'moment';
 
 //fishTask ph Temp
 //Resourvour 1: EC pH Nitrate
@@ -25,6 +26,24 @@ class DataVisualization extends Component {
     let fishTankData;
     let firstReservoirData;
     let secondReservoirData;
+
+    let startMoment = moment(this.state.startDate);
+    let endMoment = moment(this.state.endDate);
+    const startTimeMoment = moment(this.state.startTime);
+    const endTimeMoment = moment(this.state.endTime);
+    startMoment.set({
+       'hour': startTimeMoment.get('hour'),
+       'minute': startTimeMoment.get('minute'), 
+       'second': 0
+    });
+    endMoment.set({
+       'hour': endTimeMoment.get('hour'),
+       'minute': endTimeMoment.get('minute'), 
+       'second': 0
+    });
+    const start = startMoment.utc().valueOf();
+    const end = endMoment.utc().valueOf();
+
     fetch('/data', {
       method: 'POST',
       headers: {
@@ -32,10 +51,8 @@ class DataVisualization extends Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        startDate: this.state.startDate,
-        startTime: this.state.startTime,
-        endDate: this.state.endDate,
-        endTime: this.state.endTime,
+        start,
+        end,
         sensor: this.state.sensor
       })
     })

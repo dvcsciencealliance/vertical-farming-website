@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import Paper from 'material-ui/Paper';
 import DataVisualization from './DataVisualization';
 import DataInput from './DataInput';
+import moment from 'moment';
+
 import './DataContainer.css';
 
 class DataContainer extends Component {
   state = {
-    startDate: new Date(),
-    startTime: new Date(new Date().getTime() - 30*60000),
-    endDate: new Date(),
-    endTime: new Date(),
+    startDate: moment().toDate(),
+    startTime: moment().subtract(30, 'minutes').toDate(),
+    endDate: moment().toDate(),
+    endTime: moment().toDate(),
     sensor: "pH",
     editing: false
   };
