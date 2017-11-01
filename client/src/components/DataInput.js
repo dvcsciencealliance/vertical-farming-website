@@ -58,7 +58,7 @@ class DataInput extends Component {
             onChange={(event, index, value) => this.setState({ sensor: value })}
             >
             <MenuItem value={"pH"} primaryText="pH" />
-            <MenuItem value={"Tempertature"} primaryText="Temperature" />
+            <MenuItem value={"Temperature"} primaryText="Temperature" />
             <MenuItem value={"Conductivity"} primaryText="Conductivity" />
             <MenuItem value={"Nitrate"} primaryText="Nitrate" />
           </SelectField>
