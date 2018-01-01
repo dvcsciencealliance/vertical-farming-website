@@ -1,23 +1,51 @@
 {
   "name": "vertical-farming-website",
-  "version": "1.0.0",
+  "version": "0.0.2",
+  "private": true,
+  "description": "Website for DVC Vertical Farming",
   "main": "app.js",
-  "repository": "https://github.com/dvcsciencealliance/vertical-farming-website.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dvcsciencealliance/vertical-farming-website.git"
+  },
+  "scripts": {
+    "start": "npm run build && node dist/app.js",
+    "build": "babel src --out-dir dist",
+    "lint": "eslint .",
+    "fix": "eslint --fix ./",
+    "flow-start": "flow",
+    "flow-stop": "flow stop"
+  },
   "author": "Thomas Munduchira",
   "license": "MIT",
   "dependencies": {
-    "bcrypt": "1.0.2",
-    "body-parser": "1.17.1",
-    "compression": "1.6.2",
+    "bcrypt": "1.0.3",
+    "body-parser": "1.18.2",
+    "compression": "1.7.1",
     "cookie-parser": "1.4.3",
-    "express": "4.15.2",
-    "jsonwebtoken": "7.3.0",
-    "morgan": "1.8.1",
-    "nodemon": "1.11.0",
-    "pg": "6.1.5",
-    "serve-favicon": "2.4.2"
+    "express": "4.16.2",
+    "helmet": "3.9.0",
+    "jsonwebtoken": "8.1.0",
+    "morgan": "1.9.0",
+    "nodemon": "1.14.7",
+    "pg": "7.4.0",
+    "serve-favicon": "2.4.5"
   },
-  "scripts": {
-    "start": "nodemon ./bin/www"
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-eslint": "8.1.2",
+    "babel-preset-flow": "6.23.0",
+    "eslint": "4.14.0",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-flowtype": "2.40.1",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-prettier": "2.4.0",
+    "flow-bin": "0.62.0",
+    "prettier": "1.9.2",
+    "prettier-eslint": "8.7.0"
+  },
+  "engines": {
+    "node": ">=8"
   }
 }

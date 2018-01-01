@@ -76,7 +76,7 @@ class About extends Component {
     return (
       <div className="About">
         <Navbar 
-        title = "DVC Vertical Farming"
+        title="DVC Vertical Farming"
         links={[
         {
           name: 'Main',
