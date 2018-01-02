@@ -13,6 +13,13 @@ router.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
+router.use((req, res, next) => {
+  if (!req.session) {
+    return next(new Error('System down'));
+  }
+  return next();
+});
+
 router.post('/data', (req, res) => {
   // pool.query("select * from data where username = $1", [req.body.username], function(err, response) {
   //   if (err) {

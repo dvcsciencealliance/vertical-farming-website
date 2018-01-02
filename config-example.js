@@ -8,6 +8,9 @@ const config = {
     max: NUMBER_OF_CLIENTS, // max number of clients in the pool
     idleTimeoutMillis: TIME, // how long a client is allowed to remain idle before being closed
   },
+  session: {
+    secret: SECRET,
+  },
   credentials: {
     secret: SECRET,
     saltRounds: SALT_ROUNDS,
