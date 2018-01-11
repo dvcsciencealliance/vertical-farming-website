@@ -15,6 +15,14 @@ const config = {
     secret: SECRET,
     saltRounds: SALT_ROUNDS,
   },
+  slack_bot: {
+    token: 'XXXX-XXXXXXXXXXXXXXX',
+    name: 'my_bot',
+    notify_channels: 
+    [
+      'test_bot'
+    ]
+  }
 };
 
 module.exports = config;
