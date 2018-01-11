@@ -5,6 +5,7 @@ var config = require('./config');
 var jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const pool = require('./lib/db');
+const slack = require('./lib/slack');
 
 router.use('/', express.static(path.join(__dirname, 'client/build')));
 
@@ -93,6 +94,14 @@ router.post('/pump', function(req, res) {
   return res.send({ 
     success: true, 
     message: 'Toggled.'
+  }); 
+});
+
+router.post('/alert', function(req, res) {
+  var msg = 'Alert from ' + req.body.name + ': ' + req.body.message;
+  slack.postMsg(msg);
+  return res.send({ 
+    success: true, 
   }); 
 });
 
