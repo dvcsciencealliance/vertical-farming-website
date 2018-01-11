@@ -1,0 +1,14 @@
+[ignore]
+/dist
+/client
+config-example.js
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+
+[strict]

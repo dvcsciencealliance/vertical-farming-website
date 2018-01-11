@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
-import AboutButton from '../../components/AboutButton';
 import Navbar from '../../components/Navbar';
-import TimeInput from '../../components/TimeInput';
+import DataContainer from '../../components/DataContainer';
 import Footer from '../../components/Footer';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import AddIcon from 'material-ui/svg-icons/content/add';
 import checkAuthenticity from '../../lib/checkAuthenticity';
 import './Data.css';
 
+var index = 0;
+
 class Data extends Component {
   state = {
-    authenticated: false
+    authenticated: false,
+    children: [0]
   };
 
   componentWillMount() {
@@ -20,6 +24,14 @@ class Data extends Component {
           authenticated: true
         });
       }
+    });
+  }
+
+  add() {
+    var children = this.state.children;
+    children.push(++index);
+    this.setState({
+      children
     });
   }
 
@@ -52,12 +64,15 @@ class Data extends Component {
         },
         button
         ]}/>
-        <TimeInput />
-        <AboutButton />
+        { this.state.children.map((id) => <DataContainer key={id} id={id} />)}
+        <FloatingActionButton onTouchTap={() => this.add()} className="button">
+          <AddIcon />
+        </FloatingActionButton>
         <Footer/>
       </div>
     );
   }
 }
+
 
 export default Data;
