@@ -6,11 +6,20 @@ const config = require('../config');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const pool = require('./lib/db');
+const slack = require('./lib/slack');
 
 router.use('/', express.static(path.join(__dirname, '../client/build')));
 
 router.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
+
+router.post('/alert', function(req, res) {
+  var msg = 'Alert from ' + req.body.name + ': ' + req.body.message;
+  slack.postMsg(msg);
+  return res.send({ 
+    success: true, 
+  }); 
 });
 
 router.use((req, res, next) => {
