@@ -17,7 +17,7 @@ class LoginInput extends Component {
   };
 
   login(event) {
-    if (event.key && event.key != "Enter") {
+    if (event.key && event.key !== "Enter") {
       return;
     }
     fetch('/login', {

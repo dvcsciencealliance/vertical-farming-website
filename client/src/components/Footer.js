@@ -10,11 +10,11 @@ class Footer extends Component {
   render() {
     return (
       <div className="Footer">
-        <div className="wow fadeIn row" data-wow-offset="80">
+        <div className="row" data-wow-offset="80">
           <p className="ten columns offset-by-one">
             DVC Vertical Farming © <span id="year">{new Date().getFullYear()}</span>
           </p>
-          <a className="four columns offset-by-four" href="https://github.com/dvcsciencealliance">
+          <a className="wow fadeIn four columns offset-by-four" href="https://github.com/dvcsciencealliance">
             <i className="fa fa-github fa-2x" aria-hidden="true"></i>
           </a>
         </div>
