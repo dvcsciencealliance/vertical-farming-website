@@ -11,7 +11,7 @@
     "compression": "^1.6.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.2",
-    "jsonwebtoken": "^7.3.0",
+    "jsonwebtoken": "^8.0.0",
     "morgan": "^1.8.1",
     "nodemon": "^1.11.0",
     "pg": "^6.1.5",
